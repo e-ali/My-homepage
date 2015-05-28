@@ -26,10 +26,6 @@ a:visited {
     color: #9f9f9f;
 }
 
-#header {
-    z-index: 1;
-    position: absolute; left: 40%;
-}
 nav {
     text-align: left;
     float: left;
@@ -38,6 +34,9 @@ nav {
     display: inline;
     z-index: 2;
     position: absolute; left: 5px;
+}
+nav a {
+    padding-right: 5px;
 }
 
 .cv {
