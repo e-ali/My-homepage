@@ -9,6 +9,7 @@ header {
 	text-align: center;
 	padding: 5px;
 	margin-bottom: 10px;
+    min-height: 25px;
 }
 
 .category {
@@ -24,11 +25,18 @@ header {
 	transition: margin 2s, width 2s;
 }
 
+#header {
+    z-index: 1;
+    position: absolute; left: 46%;
+}
 nav {
     text-align: left;
     float: left;
     font-size: 70%;
-    margin-top: 5px;
+    display: inline;
+    z-index: 2;
+    margin-top: 4px;
+    position: absolute; left: 5px;
 }
 a {
     color: #ffffff;
@@ -70,7 +78,6 @@ a:visited {
 }
 
 footer {
-    padding-top: 5px;
 }
 
 /* footer stuff */ * {
@@ -82,7 +89,7 @@ html, body {
 .page-wrap {
 	min-height: 100%;
 	/* equal to footer height */
-	margin-bottom: -25px; 
+	margin-bottom: -20px; 
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
@@ -93,7 +100,7 @@ html, body {
   display: block;
 }
 .site-footer, .page-wrap:after {
-  height: 20px; 
+  height: 15px; 
 }
 .site-footer {
 	background-color: #1E2426;
