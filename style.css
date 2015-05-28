@@ -21,6 +21,16 @@ section h2 {
 a {
 	color: #ffffff;
 }
+a:visited {
+    color: #9f9f9f;
+}
+
+nav {
+    text-align: left;
+    float: left;
+    font-size: 70%;
+    margin-top: 5px;
+}
 
 .cv {
 	background-color: #1E2426;
