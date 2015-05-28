@@ -1,0 +1,88 @@
+body {
+	background-color: #103D50;
+	color: #ffffff;
+}
+header {
+	background-color: #1E2426;
+	color: #ffffff;
+	text-align: center;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+footer {
+    padding-top: 5px;
+}
+section {
+    margin: 10px 0px 10px;
+}
+section h2 {
+    margin: 10px;
+}
+a {
+	color: #ffffff;
+}
+
+.cv {
+	background-color: #1E2426;
+	opacity: 0.8;
+	text-align: left;
+	display: inline-block;
+	border: 2px solid black;
+	width: 60%;
+	vertical-align: top;
+	margin: 0px 20px 10px;
+    padding: 15px 20px 20px;
+	min-width: 240px;
+    line-height: 120%;
+	transition: margin 2s, width 2s;
+}
+.category {
+    background-color: #1E2426;
+	opacity: 0.8;
+	text-align: center;
+	display: inline-block;
+	border: 2px solid black;
+	width: 25%;
+	margin: 10px 20px 10px;
+    padding: 10px 0px;
+	min-width: 240px;
+	transition: margin 2s, width 2s;
+}
+.list {
+	text-align: center;
+	list-style-type: none;
+	margin: 0px 0px 5px;
+	padding: 0px 0px;
+}
+#mainlist {
+    margin-top: 10%;
+}
+
+
+/* footer stuff */ * {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+	min-height: 100%;
+	/* equal to footer height */
+	margin-bottom: -25px; 
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 20px; 
+}
+.site-footer {
+	background-color: #1E2426;
+	text-align: center;
+	vertical-align: middle;
+}
