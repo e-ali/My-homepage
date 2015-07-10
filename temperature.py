@@ -12,8 +12,8 @@ def help():
     print("Options:")
     print("\t-m: Metric units, -i: Imperial units, -s: Kelvin")
     print("\t-c: City name, e.g. Cairo, Helsinki")
-    print("\t-d: Daemonize, see -f")
-    print("\t-f: Filename to output the weather data to, see -d")
+    print("\t-d: Daemonize, see -o")
+    print("\t-o: Filename to output the weather data to, see -d")
 
 def getWeatherData(city, units="standard"):
     url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=" + units
@@ -37,23 +37,27 @@ def weatherString(data, units):
     humidity = data['main']['humidity']
     city = data['name']
 
-    weather = "Cairo's temperature: " + str(int(temp)) + unitString
+    weather = city + "'s temperature: " + str(int(temp)) + unitString
     weather += "| Humidity: " + str(humidity) + "%"
     return weather
 
 def daemonize(city, units, forecast_file):
-    while True:
-        weather = getWeatherData(city, units)
-        forecast = weatherString(weather, units)
-        try:
-            f = open(forecast_file, 'w')
-        except IOError:
-            print("Unable to open the file: " + forecast_file)
-            sys.exit(2)
-        if forecast:
-            f.write(forecast)
-            f.close()
-        time.sleep(10*60)
+    newpid = os.fork()
+    if newpid == 0:
+        while True:
+            weather = getWeatherData(city, units)
+            forecast = weatherString(weather, units)
+            try:
+                f = open(forecast_file, 'w')
+            except IOError:
+                print("Unable to open the file: " + forecast_file)
+                sys.exit(2)
+            if forecast:
+                f.write(forecast)
+                f.close()
+            time.sleep(10*60)
+        else:
+            return
     return
 
 def main():
